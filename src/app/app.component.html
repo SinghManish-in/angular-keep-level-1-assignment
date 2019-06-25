@@ -1,19 +1,25 @@
 <!-- HeaderComponent to be displayed as part of AppComponent -->
 <app-header></app-header>
 
-<!-- Mat Inputs for getting user input -->
-
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="note.title" name="title">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="note.text" name="text">
-    </mat-form-field>
-
-    <button (click)="addNote()" mat-raised-button color="primary">Add</button>
-</form>
+<mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Add Note
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput placeholder="title" [(ngModel)]="note.title" name="title">
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput placeholder="text" [(ngModel)]="note.text" name="text">
+          </mat-form-field>
+          <button (click)="addNote()" mat-raised-button color="primary">Add</button>
+        </mat-expansion-panel>
+      </mat-accordion>
+      
 
 <mat-card class="example-card">
     <div *ngFor="let note of notes" class="mat-card">
