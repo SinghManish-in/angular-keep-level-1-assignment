@@ -24,7 +24,7 @@ export class AppComponent {
 
   addNote(note: Note): void {
     if (this.note.title == "" || this.note.text == "") {
-      this.errMessage = "Need both title and text";
+      this.errMessage = "Title and Text both are required fields";
     } else {
       this.notesService.addNote(this.note).subscribe(data => { }, error => {
         this.errMessage = "Could not add note";

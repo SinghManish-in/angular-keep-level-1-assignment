@@ -1,6 +1,6 @@
 <!-- HeaderComponent to be displayed as part of AppComponent -->
 <app-header></app-header>
-
+<label class='error-message'>{{ errMessage }}</label>
 <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -30,7 +30,8 @@
     </div>
 </mat-card>
 
-<label *ngIf="errorMessage" class="error-message">{{ errorMessage }}</label>
+
+
 
 
 
