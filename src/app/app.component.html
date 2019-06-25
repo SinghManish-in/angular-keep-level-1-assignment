@@ -6,10 +6,27 @@
 
 <!-- To add notes -->
 
+<mat-toolbar color="primary">{{title}}</mat-toolbar>
 
+<!-- Mat Inputs for getting user input -->
 
-<h1>Pritee</h1>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="note.title" name="title">
+  </mat-form-field>
 
+  <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="note.text" name="text">
+  </mat-form-field>
+
+  <button (click)="addNote()" mat-raised-button color="primary">Add</button>
+</form>
+
+<label *ngIf="errorMessage" class="error-message">{{ errorMessage }}</label>
+<div *ngFor = "let note of notes">
+  <h2>{{note.title}}</h2>
+  <h2>{{note.text}}</h2>
+</div>
 
 <!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
 
