@@ -1,39 +1,29 @@
-<!-- HeaderComponent to be displayed as part of AppComponent -->
 <app-header></app-header>
 <label class='error-message'>{{ errMessage }}</label>
 <mat-accordion>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
             <mat-panel-title>
-              Add Note
+                Add Note
             </mat-panel-title>
-          </mat-expansion-panel-header>
-      
-          <mat-form-field>
-            <input matInput placeholder="title" [(ngModel)]="note.title" name="title">
-          </mat-form-field>
-      
-          <mat-form-field>
-            <input matInput placeholder="text" [(ngModel)]="note.text" name="text">
-          </mat-form-field>
-          <button (click)="addNote()" mat-raised-button color="primary">Add</button>
-        </mat-expansion-panel>
-      </mat-accordion>
-      
+        </mat-expansion-panel-header>
 
-<mat-card class="example-card">
-    <div *ngFor="let note of notes" class="mat-card">
+        <mat-form-field>
+            <input matInput placeholder="title" [(ngModel)]="note.title" name="title">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea matInput placeholder="text" [(ngModel)]="note.text" name="text"></textarea>
+        </mat-form-field>
+        <button (click)="addNote()" mat-raised-button color="primary">Add</button>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<mat-card class="mat-card">
+    <div *ngFor="let note of notes" >
         <mat-card-header>
             <mat-card-title>{{note.title}}</mat-card-title>
-            <mat-card-subtitle>{{note.text}}</mat-card-subtitle>
+            <mat-card-title>{{note.text}}</mat-card-title>
         </mat-card-header>
     </div>
 </mat-card>
-
-
-
-
-
-
-
-<!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
