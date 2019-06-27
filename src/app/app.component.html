@@ -4,7 +4,7 @@
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Add Note
+                Take a note
             </mat-panel-title>
         </mat-expansion-panel-header>
 
@@ -15,7 +15,7 @@
         <mat-form-field>
             <textarea matInput placeholder="text" [(ngModel)]="note.text" name="text"></textarea>
         </mat-form-field>
-        <button (click)="addNote()" mat-raised-button color="primary">Add</button>
+        <button (click)="addNote()" mat-raised-button color="primary">Done</button>
     </mat-expansion-panel>
 </mat-accordion>
 
@@ -23,7 +23,7 @@
     <div *ngFor="let note of notes" >
         <mat-card-header>
             <mat-card-title>{{note.title}}</mat-card-title>
-            <mat-card-title>{{note.text}}</mat-card-title>
+            <mat-card-content>{{note.text}}</mat-card-content>
         </mat-card-header>
     </div>
 </mat-card>
